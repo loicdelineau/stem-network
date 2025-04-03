@@ -218,8 +218,8 @@ section {
 }
 
 .card-image {
-  height: 10rem;
-  background-color: #ffeeee;
+  height: 8rem;
+  background-color: #ffffff;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
