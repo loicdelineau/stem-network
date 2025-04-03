@@ -1,50 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Swiss Edtech Association</title>
-	<meta name="description" content="Landing Page. Contact us for more information.">
-	<meta name="author" content="Swiss Edtech Association">
-	<meta name="keywords" content="swiss, edtech, association, contact">
-	<link rel="icon" type="image/svg" href="logo.svg">
-	<style>
-	    body {
-		margin: 0;
-		background: linear-gradient(135deg, 
-				hsl(240, 100%, 8%), hsl(290, 100%, 8%));
-		color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		text-align: center;
-	    }
-	    img {
-		width: 80vw; /* Make it responsive relative to viewport width */
-		max-width: 800px; /* Limit max size */
-		height: auto; /* Maintain aspect ratio */
-		cursor: pointer;
-	    }
-	    h1 {
-		margin-top: 20px;
-		font-family: Arial, sans-serif;
-		font-size: 24px;
-		font-weight: bold;
-	    }
-	    a {
-		text-decoration: none;
-	    }
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Edtech Association</title>
+  <meta name="description" content="Advancing educational technology in Switzerland through events, funding, and collaboration.">
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<a href="mailto:contact@microver.ch">
-	    <img src="logo.svg" alt="logo">
-	</a>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="logo-container">
+          <img src="logo.svg" alt="Swiss Edtech Association Logo" class="logo">
+        </div>
+        <nav class="main-nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#events" class="nav-link">Events</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="section-content">
+          <h1>Swiss Edtech Association</h1>
+          <p class="subtitle">Advancing educational technology in Switzerland through events, funding, and collaboration.</p>
+          <div class="button-group">
+            <a href="articles.pdf" target="_blank" class="button primary">View Articles of Association</a>
+            <a href="#contact" class="button secondary">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="section-content">
+          <div class="two-columns">
+            <div class="column">
+              <h2>Our Mission</h2>
+              <p>
+                The Swiss Edtech Association is dedicated to organizing and funding various educational technology events 
+                throughout Switzerland. We bring together educators, technologists, and innovators to advance the future 
+                of education in our country.
+              </p>
+            </div>
+            <div class="column">
+              <h2>What We Do</h2>
+              <ul class="bullet-list">
+                <li>Organize educational technology events across Switzerland</li>
+                <li>Connect educators with cutting-edge technology solutions</li>
+                <li>Promote Switzerland as a hub for educational innovation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="events">
+        <div class="section-content">
+          <h2 class="section-title">Our Events</h2>
+          <p class="section-subtitle">We host and support educational technology events throughout Switzerland.</p>
+          
+          <div class="event-cards">
+            <div class="card">
+              <div class="card-image">
+                <h3 class="image-title">Swiss Rover Challenge</h3>
+              </div>
+              <h3 class="card-title">Swiss Rover Challenge</h3>
+              <p class="card-description">
+                An exciting competition where students design, build, and operate rovers to complete specific tasks.
+              </p>
+              <a href="https://swissroverchallenge.com" target="_blank" class="button secondary full-width">Visit Website</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-content">
+          <div class="two-columns">
+            <div class="column">
+              <h2>Contact Us</h2>
+              <p>
+                Interested in our events or want to learn more about the Swiss Edtech Association? 
+                Get in touch with us.
+              </p>
+              <div class="contact-info">
+                <p class="label">Email:</p>
+                <p>contact@swissedtech.org</p>
+              </div>
+              <div class="contact-info">
+                <p class="label">Website:</p>
+                <p>swissedtech.org</p>
+              </div>
+            </div>
+            <div class="column">
+              <h2>Join Us</h2>
+              <p>
+                Become a member of the Swiss Edtech Association and help shape the future of education in Switzerland.
+              </p>
+              <a href="articles.pdf" target="_blank" class="button primary">View Articles of Association</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p class="copyright">© <span id="current-year"></span> Swiss Edtech Association. All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="articles.pdf" target="_blank" class="footer-link">Articles of Association</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
-
-
