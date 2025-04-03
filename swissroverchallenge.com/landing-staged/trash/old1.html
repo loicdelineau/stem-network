@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiss Rover Challenge</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer>
+    // Simple scroll to top button logic
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollTopBtn');
+      btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-white font-sans scroll-smooth">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 bg-gray-900 bg-opacity-90 z-50 shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+	<a href="/">
+  	<img src="./swissroverchallenge-v0-large.svg" alt="Swiss Rover Challenge Logo" class="h-20">
+	</a>
+      <nav class="space-x-6 text-sm">
+        <a href="#about" class="hover:text-red-400">About</a>
+        <a href="#timeline" class="hover:text-red-400">Timeline</a>
+        <a href="#team" class="hover:text-red-400">Team</a>
+        <a href="#sponsors" class="hover:text-red-400">Sponsors</a>
+        <a href="#contact" class="bg-red-400 text-gray-900 px-4 py-2 rounded hover:bg-yellow-300">Join Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?mars,robot');">
+    <div class="bg-black bg-opacity-60 p-10 rounded-lg text-center max-w-2xl">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Explore. Innovate. Compete.</h2>
+      <p class="text-xl mb-6">The premier student space robotics competition in Switzerland. Build the next generation Mars rover.</p>
+      <a href="#about" class="bg-red-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 px-6 md:px-16 bg-gray-800">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">What is the Swiss Rover Challenge?</h3>
+      <p class="text-lg leading-relaxed text-gray-300">
+        The Swiss Rover Challenge is a national competition for university students to design, build and operate Mars rover prototypes. 
+        Our goal is to empower the next generation of engineers, scientists, and explorers through hands-on challenges simulating real extraterrestrial tasks.
+      </p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="py-20 bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h3 class="text-3xl font-bold mb-12">Timeline</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">🚀 Launch</h4>
+          <p class="text-gray-300">Applications open – Teams submit proposals and get ready to build.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">🛠️ Prototyping</h4>
+          <p class="text-gray-300">Teams design and build their Mars rover prototypes over several months.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded shadow">
+          <h4 class="text-xl font-semibold mb-2">🏁 Finals</h4>
+          <p class="text-gray-300">Competition weekend with field challenges, presentations, and awards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="py-20 bg-gray-800">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold">Meet the Team</h3>
+      <p class="text-gray-400">Passionate minds behind the Swiss Rover Challenge</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 px-6">
+      <!-- Repeat this block for each team member -->
+      <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+        <img src="https://source.unsplash.com/200x200/?portrait,person" alt="Person" class="w-24 h-24 mx-auto rounded-full mb-4">
+        <h4 class="font-semibold text-lg">Name Surname</h4>
+        <p class="text-sm text-gray-400">Role / School</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section id="sponsors" class="py-20 bg-gray-900">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold">Our Sponsors</h3>
+      <p class="text-gray-400">Partners who make this challenge possible</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
+      <!-- Placeholder logos -->
+      <img src="https://via.placeholder.com/150x80?text=Sponsor+1" alt="Sponsor Logo" class="mx-auto">
+      <img src="https://via.placeholder.com/150x80?text=Sponsor+2" alt="Sponsor Logo" class="mx-auto">
+      <img src="https://via.placeholder.com/150x80?text=Sponsor+3" alt="Sponsor Logo" class="mx-auto">
+      <img src="https://via.placeholder.com/150x80?text=Sponsor+4" alt="Sponsor Logo" class="mx-auto">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-red-400 text-gray-900 text-center">
+    <h3 class="text-3xl font-bold mb-4">Get Involved</h3>
+    <p class="text-lg mb-6">Whether you're a student, mentor, or sponsor, we’d love to hear from you.</p>
+    <a href="mailto:info@swissroverchallenge.org" class="inline-block bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-700 transition">Contact Us</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-center text-sm text-gray-500 py-6">
+    © 2025 Swiss Rover Challenge. All rights reserved.
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn" class="hidden fixed bottom-6 right-6 bg-red-400 text-gray-900 px-4 py-2 rounded shadow hover:bg-yellow-300">
+    ↑ Top
+  </button>
+
+</body>
+</html>
+

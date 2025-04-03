@@ -1,2 +1,2 @@
 # swiss-edtech-association
-Swiss Edtech Association
+Monorepo of the Swiss Edtech Association
