@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiss Rover Challenge</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="icon" type="image/svg" href="./icon.svg" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 100px;
+    }
+  </style>
+
+  <script defer>
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('scrollTopBtn');
+      btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileNav');
+      menu.classList.toggle('hidden');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#mobileNav a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileNav').classList.add('hidden');
+        });
+      });
+    });
+  </script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans scroll-smooth">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 z-50 shadow-md">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/">
+      <img src="./logo.svg" alt="Swiss Rover Challenge Logo" class="h-20">
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="lg:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="Toggle Menu">
+      <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center gap-6 text-lg font-bold whitespace-nowrap">
+      <a href="#about" class="hover:text-red-500 py-2">About</a>
+      <a href="#timeline" class="hover:text-red-500 py-2">Timeline</a>
+      <a href="#team" class="hover:text-red-500 py-2">Team</a>
+      <a href="#sponsors" class="hover:text-red-500 py-2">Sponsors</a>
+      <a href="#contact" class="bg-red-600 text-gray-50 px-5 py-2 rounded hover:bg-red-400 whitespace-nowrap">Join Us</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobileNav" class="hidden lg:hidden px-6 pb-4 bg-gray-900">
+    <a href="#about" class="block py-2 text-base font-bold hover:text-red-500">About</a>
+    <a href="#timeline" class="block py-2 text-base font-bold hover:text-red-500">Timeline</a>
+    <a href="#team" class="block py-2 text-base font-bold hover:text-red-500">Team</a>
+    <a href="#sponsors" class="block py-2 text-base font-bold hover:text-red-500">Sponsors</a>
+    <a href="#contact" class="block py-2 bg-red-600 text-gray-50 font-bold rounded hover:bg-red-400 w-fit">Join Us</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('./rosey-backdrop-5.jpg');">
+  <div class="bg-black bg-opacity-60 p-10 rounded-lg text-center max-w-2xl mt-24">
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4">31st of May 2025</h2>
+    <p class="text-xl mb-6">The premier student space robotics competition in Switzerland. <br>Institut Le Rosey, Rolle.</p>
+    <a href="#about" class="bg-red-600 text-gray-50 px-6 py-3 rounded-lg font-semibold hover:bg-red-400 transition">Learn More</a>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-20 px-6 md:px-16 bg-gray-800">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6">What is the Swiss Rover Challenge?</h3>
+    <p class="text-lg leading-relaxed text-gray-300">
+      The Swiss Rover Challenge is a national competition for students to design, build and operate Mars rover prototypes. 
+    </p>
+
+<br>
+
+<a href="https://microver.ch" target="_blank">
+  <img src="./patient-zero.png" alt="Patient Zero MK2 - microver.ch" class="mx-auto">
+</a>
+
+<br>
+
+    <p class="text-lg leading-relaxed text-gray-300">
+      Our goal is to empower the next generation of engineers, scientists, and explorers through hands-on challenges designed to test their rovers, their team spirit and their engineering prowess.  
+    </p>
+
+  </div>
+</section>
+
+<!-- TIMELINE SECTION -->
+<section id="timeline" class="py-20 bg-gray-900">
+  <div class="max-w-4xl mx-auto text-center px-6">
+    <h3 class="text-3xl font-bold mb-12">Timeline</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="bg-gray-800 p-6 rounded shadow">
+        <h4 class="text-2xl font-semibold mb-2">📝 Registration </h4>
+        <h4 class="text-gray-300 font-bold mb-2">September</h4>
+        <p class="text-gray-300">Applications open – Teams submit proposals and get ready to build.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow">
+        <h4 class="text-2xl font-semibold mb-2">🛠️ Prototyping</h4>
+        <h4 class="text-gray-300 font-bold mb-2">October to April</h4>
+        <p class="text-gray-300">Teams design and build their Mars rover prototypes over several months.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded shadow">
+        <h4 class="text-2xl font-semibold mb-2">🏆 Competition</h4>
+        <h4 class="text-gray-300 font-bold mb-2">May</h4>
+        <p class="text-gray-300">Competition weekend with field challenges, presentations, and awards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section id="team" class="py-20 bg-gray-800">
+  <div class="text-center mb-12">
+    <h3 class="text-3xl font-bold">Meet the Team</h3>
+    <p class="text-gray-400">Passionate minds behind the Swiss Rover Challenge</p>
+  </div>
+ 
+<div class="flex flex-wrap justify-center gap-8 px-6">
+
+<a href="https://loicdelineau.com" target="_blank">
+    <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+      <img src="loic.jpg" alt="Person" class="w-24 h-24 mx-auto rounded-full mb-4">
+      <h4 class="font-semibold text-lg">Loïc Delineau</h4>
+      <p class="text-sm text-gray-400">Founder</p>
+    </div>
+</a>
+
+<a href="https://www.linkedin.com/in/afroditi-skevi-b7447b48/" target="_blank">
+    <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+      <img src="skevi.jpg" alt="Person 1" class="w-24 h-24 mx-auto rounded-full mb-4">
+      <h4 class="font-semibold text-lg">Afroditi Skevi</h4>
+      <p class="text-sm text-gray-400">Head of Tech – Institut Le Rosey</p>
+    </div>
+</a>
+
+<a href="https://people.epfl.ch/roman.bruegger?lang=en" target="_blank">
+   <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+     <img src="unknown.jpg" alt="Person 2" class="w-24 h-24 mx-auto rounded-full mb-4">
+     <h4 class="font-semibold text-lg">Ongoing</h4>
+     <p class="text-sm text-gray-400">Application Pending</p>
+   </div>
+</a>
+
+<a href="https://people.epfl.ch/anca.rusu" target="_blank">
+   <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+     <img src="unknown.jpg" alt="Person 2" class="w-24 h-24 mx-auto rounded-full mb-4">
+     <h4 class="font-semibold text-lg">Anca Rusu</h4>
+     <p class="text-sm text-gray-400">Executive Director – SRA, EPFL</p>
+   </div>
+</a>
+
+<a href="https://www.linkedin.com/in/andrew-macrae-118b62b9/" target="_blank">
+   <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+     <img src="andrew.jpg" alt="Person 2" class="w-24 h-24 mx-auto rounded-full mb-4">
+     <h4 class="font-semibold text-lg">Andrew MacRae</h4>
+     <p class="text-sm text-gray-400">Head of Tech - Beau Soleil</p>
+   </div>
+</a>
+
+<a href="https://venturi.space/en" target="_blank">
+   <div class="bg-gray-900 rounded-lg p-6 w-64 shadow-lg text-center">
+     <img src="vincent.jpg" alt="Person 3" class="w-24 h-24 mx-auto rounded-full mb-4">
+     <h4 class="font-semibold text-lg">Vincent Nguyen</h4>
+     <p class="text-sm text-gray-400">Head Judge – Venturi Lab</p>
+   </div>
+</a>
+
+   
+</div>
+
+</section>
+
+<!-- SPONSORS SECTION -->
+<section id="sponsors" class="py-20 bg-gray-900">
+  <div class="text-center mb-12">
+    <h3 class="text-3xl font-bold">Our Sponsors</h3>
+    <p class="text-gray-400">Partners who make this challenge possible</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-8 px-6">
+
+<a href="https://stem-network.org" target="_blank">
+  <img src="./sponsor/stemnetwork.png" alt="Sponsor STEM Network" class="mx-auto">
+</a>
+
+<a href="https://www.edtech-collider.ch/" target="_blank">
+  <img src="./sponsor/ongoing.png" alt="Sponsor Edtech Collider" class="mx-auto">
+</a>
+
+<a href="https://rosey.ch" target="_blank">
+  <img src="./sponsor/rosey.png" alt="Sponsor Le Rosey" class="mx-auto">
+</a>
+
+<a href="https://swiss-robotics.org/about-us/leadership-team/" target="_blank">
+  <img src="./sponsor/sra.png" alt="Sponsor Swiss Robotics Association" class="mx-auto">
+</a>    
+
+<a href="https://microver.ch" target="_blank">
+  <img src="./sponsor/microver.png" alt="Sponsor microver.ch" class="mx-auto">
+</a>
+
+
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 bg-gray-800 text-gray-400 text-center">
+  <h3 class="text-3xl font-bold mb-4 text-gray-50">Get Involved</h3>
+
+<p class="text-lg mb-6">Whether you're a student, mentor, or sponsor, we’d love to hear from you!</p>
+
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 place-items-center">
+
+<div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+  <p>Interested in coming as a spectator for this year's competition? </p>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSczL6Xup_jsyNolyuwOSd4FZwwq1c6kw918AixL8LB5xnIA_g/viewform?usp=dialog" class="inline-block bg-gray-700 text-white px-6 py-3 rounded hover:bg-red-400 transition">Sign-up as a Visitor</a>
+</div>
+
+<div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+  <p>Interested in participating as a team during next year's competition? </p>
+  <br>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSemic-f1Sz6yBZIsf_EINx0hwqvkwTDuW7bWzCLnf0a4E_5nQ/viewform?usp=dialog" class="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-400 font-bold transition">Pre-Register for 2026</a>
+</div>
+
+
+<div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+  <p>Interested in getting to know more about the project? </p>
+  <br>
+  <a href="mailto:src@stem-network.org" class="inline-block bg-gray-700 text-white px-6 py-3 rounded hover:bg-red-400 transition">Contact Us</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-center text-sm text-gray-500 py-6">
+  <a href="https://stem-network.org">© 2025 STEM Network.</a> All rights reserved.
+</footer>
+
+</body>
+</html>
+
