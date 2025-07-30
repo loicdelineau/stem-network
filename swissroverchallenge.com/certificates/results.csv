@@ -1,4 +1,4 @@
-Chaitanya, Sanganeria, 1
-Loic, Delineau, 2
-Christel, Dendas 3, 
-Karan, X, 4
+Chaitanya,Sanganeria,1st,\includegraphics[width=0.5cm]{gold.png}
+Loic,Delineau,2nd,\includegraphics[width=0.5cm]{silver.png}
+Christel,Dendas,3rd,\includegraphics[width=0.5cm]{bronze.png}
+Karan,X,4th,

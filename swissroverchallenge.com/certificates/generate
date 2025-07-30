@@ -18,22 +18,98 @@ cyan=$(tput setaf 6)
 white=$(tput setaf 7)
 
 # =========================== SCRIPT EXECUTION ================================
+mkdir tex-files
+mkdir pdf-files
+cp *.png ./tex-files
 
+while IFS=',' read -r firstname lastname place medal; do
 
-while IFS=',' read -r firstname lastname place; do
-	pdflatex certificate.tex 
-	rm certificate.aux certificate.log
-	open certificate.pdf
-	echo "First Name: $firstname"
-	echo "Last Name: $lastname"
-	echo "Place: $place"
-	echo "---"
+	echo $firstname $lastname
+	
+	# Replace names in the file and save it as a new .tex file 
+	cat <<EOF > ./tex-files/$firstname.tex
+\\documentclass[10pt]{article}
+\\usepackage[a4paper,margin=2.5cm]{geometry}
+\\usepackage{graphicx}
+\\usepackage[absolute,overlay]{textpos}
+\\usepackage{hyperref}   
+
+\\pagestyle{empty}
+
+\\begin{document}
+
+% Logo in the top-left
+\\begin{textblock*}{5cm}(0.5cm,1cm) % (width, position)
+	\\href{https://stem-network.org}{\\includegraphics[width=4cm]{stem-network.png}}
+\\end{textblock*}
+
+\\begin{textblock*}{5cm}(15.4cm,1cm) % (width, position)
+	\\href{https://microver.ch}{\\includegraphics[width=4cm]{microver.png}} 
+\\end{textblock*}
+
+\\begin{textblock*}{9cm}(6cm,1cm) % (width, position)
+	\\begin{center}
+		Swiss Technology \\& Education Meetups \\\\
+		Network
+	\\end{center}
+\\end{textblock*}
+
+\\vspace*{0.3cm}
+
+% Main document
+\\begin{center}
+	\\rule{10cm}{0.4pt} \\\\
+	\\vspace{1cm}
+	{\\LARGE \\bfseries Certificate of Completion} \\\\
+	\\vspace{0.5cm}
+	\\rule{10cm}{0.4pt} \\\\
+	\\vspace{1.5cm}
+	{\\large This certifies that} \\\\
+	\\vspace{1cm}
+	{\\Huge \\bfseries $firstname $lastname} \\\\
+	\\vspace{1cm}
+	{\\large has successfully completed and} \\\\
+	\\vspace{0.8cm}
+	{\\LARGE \\bfseries scored $place Place}
+	$medal \\\\
+	\\vspace{1cm}
+	{\\large at the} \\\\
+	\\vspace{1cm}
+	\\href{https://swissroverchallenge.com}{\\includegraphics[width=6cm]{src.png}} \\\\
+	\\vspace{1cm}
+	{\\LARGE \\bfseries National Robotics Competition} \\\\
+	\\vspace{1cm}
+	{\\large held at Institut Le Rosey on the 31st of May, 2025} \\\\
+	\\vspace{1cm}
+	\\rule{10cm}{0.4pt} \\\\
+\\end{center}
+
+% Signature
+\\begin{flushright}
+\\end{flushright}
+
+\\vfill
+
+\\begin{center}
+	\\textbf{Swiss Technology \\&} \\\\
+	\\textbf{Education Meetups Network} \\\\
+	\\vspace{0.3cm}
+	\\includegraphics[width=2.4cm]{signature-tight.png} \\\\
+	Loïc Delineau \\\\
+	President \\\\
+\\end{center}
+
+\\end{document}
+EOF
+		
+	# Generate this new file	
+	cd ./tex-files
+	pdflatex $firstname.tex 
+	rm $firstname.aux
+	rm $firstname.log
+	mv $firstname.pdf ../pdf-files/
+	cd ..
 done < results.csv
-
-
-exit
-
-for ((i=1; i<=$tot; ++i))
 
 
 
