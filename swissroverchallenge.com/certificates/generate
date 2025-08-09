@@ -27,7 +27,7 @@ while IFS=',' read -r firstname lastname place medal; do
 	echo $firstname $lastname
 	
 	# Replace names in the file and save it as a new .tex file 
-	cat <<EOF > ./tex-files/$firstname.tex
+	cat <<EOF > ./tex-files/$firstname-$lastname.tex
 \\documentclass[10pt]{article}
 \\usepackage[a4paper,margin=2.5cm]{geometry}
 \\usepackage{graphicx}
@@ -40,11 +40,11 @@ while IFS=',' read -r firstname lastname place medal; do
 
 % Logo in the top-left
 \\begin{textblock*}{5cm}(0.5cm,1cm) % (width, position)
-	\\href{https://stem-network.org}{\\includegraphics[width=4cm]{stem-network.png}}
+	\\includegraphics[width=4cm]{stem-network.png}
 \\end{textblock*}
 
 \\begin{textblock*}{5cm}(15.4cm,1cm) % (width, position)
-	\\href{https://microver.ch}{\\includegraphics[width=4cm]{microver.png}} 
+	\\includegraphics[width=4cm]{microver.png}
 \\end{textblock*}
 
 \\begin{textblock*}{9cm}(6cm,1cm) % (width, position)
@@ -75,7 +75,7 @@ while IFS=',' read -r firstname lastname place medal; do
 	\\vspace{1cm}
 	{\\large at the} \\\\
 	\\vspace{1cm}
-	\\href{https://swissroverchallenge.com}{\\includegraphics[width=6cm]{src.png}} \\\\
+	\\includegraphics[width=6cm]{src.png} \\\\
 	\\vspace{1cm}
 	{\\LARGE \\bfseries National Robotics Competition} \\\\
 	\\vspace{1cm}
@@ -104,10 +104,11 @@ EOF
 		
 	# Generate this new file	
 	cd ./tex-files
-	pdflatex $firstname.tex 
-	rm $firstname.aux
-	rm $firstname.log
-	mv $firstname.pdf ../pdf-files/
+	pdflatex $firstname-$lastname.tex 
+	rm $firstname-$lastname.aux
+	rm $firstname-$lastname.log
+	rm $firstname-$lastname.out
+	mv $firstname-$lastname.pdf ../pdf-files/
 	cd ..
 done < results.csv
 
